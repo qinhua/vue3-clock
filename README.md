@@ -23,6 +23,7 @@
 ### 二、使用演示
   ![](./static/demo1.gif) 
   ![](./static/demo2.gif) 
+  ![](./static/demo3.jpg) 
 <br>
 
 ### 四、使用方法
