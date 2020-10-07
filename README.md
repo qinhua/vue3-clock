@@ -2,12 +2,11 @@
 <p>
   <img alt="GitHub release" src="https://img.shields.io/badge/release-v1.0.0-orange.svg?style=for-the-badge"/>
   <img alt="vue" src="https://img.shields.io/badge/vue-3.0-green?style=for-the-badge"/>
+  <img alt="vite" src="https://img.shields.io/badge/vite-1.0.0-pink?style=for-the-badge"/>
 </p>
 
 > *A simple clock application based on vue3 and vite.*<br>
 > 一个简单的时钟应用，包含电子时钟和标准的番茄钟，时钟模式下可以切换浅色和暗黑模式，适配移动端横竖屏，欢迎issue。
-
-------
 
 <br>
 
