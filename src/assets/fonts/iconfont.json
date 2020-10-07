@@ -1,0 +1,37 @@
+{
+  "id": "2080768",
+  "name": "Clock",
+  "font_family": "clock-font",
+  "css_prefix_text": "ico",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "980399",
+      "name": "clock",
+      "font_class": "clock",
+      "unicode": "e6c1",
+      "unicode_decimal": 59073
+    },
+    {
+      "icon_id": "5044307",
+      "name": "西红柿",
+      "font_class": "xihongshi",
+      "unicode": "e60d",
+      "unicode_decimal": 58893
+    },
+    {
+      "icon_id": "4139287",
+      "name": "夜晚月亮",
+      "font_class": "lkingboyewanyueliang",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "16588088",
+      "name": "太阳",
+      "font_class": "taiyang1",
+      "unicode": "e709",
+      "unicode_decimal": 59145
+    }
+  ]
+}
