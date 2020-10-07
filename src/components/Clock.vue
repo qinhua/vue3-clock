@@ -54,7 +54,7 @@
             stroke-linejoin="round"
             stroke-linecap="round"
             fill="none"
-            stroke-dasharray="0"
+            stroke-dashoffset="0"
           />
         </svg>
         <h3 :class="['tomato-time', { shadow: tomato.start }]">
@@ -96,23 +96,31 @@ export default {
       breath: false, //是否开启冒号呼吸动画
       hour: "00",
       minute: "00",
-      dates: "1992/05/19",
+      dates: "2020/01/01",
       week: "一",
     });
     const tomato = reactive({
       start: false, //是否启动
       duration: 25, //时长，默认25分钟
       remain: "", //剩余时间
-      minute: "00",
-      second: "00",
-      path: null,
+      minute: "00", //分钟
+      second: "00", //秒
+      path: null, //进度路径
+      lineLength: null, //周长
       init() {
         this.path = document.querySelector(".progress");
+        this.lineLength = 2 * Math.PI * 100; //计算周长
+        this.path.setAttribute(
+          "stroke-dasharray",
+          `${this.lineLength} ${this.lineLength}`
+        ); //绘制描边
+        //初始化时间
         this.remain = this.duration * 60;
         const m = Math.floor(tomato.remain / 60);
         const s = tomato.remain % 60;
         this.minute = fixZero(m);
         this.second = fixZero(s);
+        // 插入提示音
         if (!document.querySelector("#tomato-sound")) {
           const audio = document.createElement("audio");
           audio.src = "./ding.wav";
@@ -127,14 +135,14 @@ export default {
       reset() {
         this.start = false;
         clearTimeout(timer);
-        this.path.setAttribute("stroke-dasharray", "0");
+        this.path.setAttribute("stroke-dashoffset", "0");
         this.remain = this.duration * 60;
         this.minute = fixZero(this.duration);
         this.second = "00";
       },
     });
 
-    // 操作，type：skin-切换皮肤,tomato-番茄钟,tomato-button-番茄钟按钮
+    // 操作，[type]skin-切换皮肤,tomato-番茄钟,tomato-button-番茄钟按钮
     const operate = (type) => {
       if (type === "tomato") {
         clearTimeout(timer);
@@ -182,11 +190,11 @@ export default {
         const s = tomato.remain % 60;
         tomato.minute = fixZero(m);
         tomato.second = fixZero(s);
-        let percent = tomato.remain / 60,
-          lineLength = 2 * Math.PI * 100;
+        // 计算时间进度并和进度条绑定
+        const percent = tomato.remain / (tomato.duration * 60);
         tomato.path.setAttribute(
-          "stroke-dasharray",
-          lineLength * percent + " " + lineLength * (1 - percent)
+          "stroke-dashoffset",
+          tomato.lineLength * (1 - percent)
         );
         tomato.remain--;
         if (tomato.remain >= 0) {
