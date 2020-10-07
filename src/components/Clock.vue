@@ -402,6 +402,7 @@ export default {
     }
   }
   .tomato-start {
+    cursor: pointer;
     display: inline-block;
     width: 200px;
     padding: 10px 0;
