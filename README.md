@@ -11,12 +11,12 @@
 
 <br>
 
-### 一、组件功能
+### 一、主要功能
 
 - 电子时钟功能，如图：
     <br>
     ![](./static/m3.png)  
-- 标准番茄钟功能，如图。
+- 标准番茄钟功能，如图：
     <br>
     ![](./static/m2.png) 
 <br>
@@ -30,18 +30,15 @@
 
 1、下载项目代码，安装依赖，npm和yarn均可
 
-> npm install
-> yarn
+> npm install 或 yarn
 
 2、运行项目
 
-> npm run dev
-> yarn dev
+> npm run dev 或 yarn dev
 
 3、打包
 
-> npm run build
-> yarn build
+> npm run build 或 yarn build
 
 
 ### 版权
